@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: rgb(176, 35, 176);
+    margin: 10px;
+    transition: .5s;
+}
