@@ -21,7 +21,7 @@ app.get('/igdb-api', async (req, res) => {
         'Accept': 'application/json'
       },
       params: {
-        'fields': 'name, rating, cover.url; limit 20; sort rating desc',
+        'fields': `${req.query.method}`,
 
       }
     });

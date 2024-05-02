@@ -1,53 +1,27 @@
 
-import '../style/game.css'
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-const clientID = import.meta.env.VITE_IGDB_CLIENT_ID
-const clientSecret = import.meta.env.VITE_IGDB_CLIENT_SECRET
+import { useParams } from "react-router-dom"
+import { getGame } from '../functions/SearchGame'
+import GameCard from "../components/GameCard"
 
 const Game = () => {
-    const [games, setGames] = useState([]);
-    async function getToken() {
-      try {
-          const response = await axios.post('https://id.twitch.tv/oauth2/token', null, {
-          params: {
-              client_id: clientID,
-              client_secret: clientSecret,
-              grant_type: 'client_credentials'
-          }
-          });
-          return response.data.access_token;
-      } catch (error) {
-          console.error('Erro ao obter token:', error);
-          throw error;
-      }
-      }
-      
-  
-    useEffect(() => {
-      const fetchGames = async () => {
-        try {
-          const token = await getToken();
-          const response = await axios.get('http://localhost:3000/igdb-api', {
-            params: {
-              token:`${token}` // Substitua pelo seu token de acesso
-            }
-          });
-          setGames(response.data);
-        } catch (error) {
-          console.error('Erro ao buscar jogos:', error);
-        }
-      };
-  
-      fetchGames();
-    }, []);
+    const {id} = useParams()
+
+    const metodo = `*, cover.url; where id = ${id}`
+    const games = getGame(metodo,id)
+
+
     return(
     <div className="class"> 
+    {games.length === 0 && <p>Carregando</p>}
     {games.map(game => (
-        <li key={game.id}>
+        <div>
          {game.cover && <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} />}
-         </li>
+         <h1>{game.name}</h1>
+         <h2>{game.summary}</h2>
+         <p>{game.storyline}</p>
+         {game.similar_games.map((item, index) => <GameCard key={game.similar_games[index]} gameID={game.similar_games[index]}/>)}
+
+        </div>
         ))}
     </div>
     )

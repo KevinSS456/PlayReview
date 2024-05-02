@@ -1,58 +1,27 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { getGame } from '../functions/SearchGame';
+import GameCard from '../components/GameCard';
 
 import '../style/home.css'
 
-const clientID = import.meta.env.VITE_IGDB_CLIENT_ID
-const clientSecret = import.meta.env.VITE_IGDB_CLIENT_SECRET
 
+const number = 2000
 
 const Home = () => {
-  const [games, setGames] = useState([]);
-  async function getToken() {
-    try {
-        const response = await axios.post('https://id.twitch.tv/oauth2/token', null, {
-        params: {
-            client_id: clientID,
-            client_secret: clientSecret,
-            grant_type: 'client_credentials'
-        }
-        });
-        return response.data.access_token;
-    } catch (error) {
-        console.error('Erro ao obter token:', error);
-        throw error;
-    }
-    }
-    
+  const metodo = `*, cover.url; rating; sort rating desc; limit 20`
+  const games = getGame(metodo)
 
-  useEffect(() => {
-    const fetchGames = async () => {
-      try {
-        const token = await getToken();
-        const response = await axios.get('http://localhost:3000/igdb-api', {
-          params: {
-            token:`${token}` // Substitua pelo seu token de acesso
-          }
-        });
-        setGames(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar jogos:', error);
-      }
-    };
-
-    fetchGames();
-  }, []);
 
   return (
     <div>
       <h1>Jogos com classificação superior a 75</h1>
-      <ul>
+
+        {games.length === 0 && <p>Carregando..</p>}
         {games.map(game => (
-          <li key={game.id}>
-            <strong>{game.name}</strong> - Rating: {game.rating}
-            {game.cover && <img src={game.cover.url} alt={`Capa de ${game.name}`} />}
-          </li>
+          <GameCard key={game.id} gameID={game.id} />
         ))}
-      </ul>
+
     </div>
   );
 };
