@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 app.get('/igdb-api', async (req, res) => {
   try {
-    const response = await axios.get('https://api.igdb.com/v4/games/', {
+    const response = await axios.get(`${req.query.url}`, {
       headers: {
         'Client-ID': 'tr0npy5qd94dkf18czwhv5k97ywu6l', // Substitua pelo seu Client ID da IGDB
         'Authorization': `Bearer ${req.query.token}`,

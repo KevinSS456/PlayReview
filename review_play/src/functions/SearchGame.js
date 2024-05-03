@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { getToken } from './Token'
 
-export function getGame(metodo, query = ''){
+export function getGame(metodo, query = '',url = 'https://api.igdb.com/v4/games/'){
     const [games, setGames] = useState([]);
     
   useEffect(() => {
@@ -12,7 +12,8 @@ export function getGame(metodo, query = ''){
         const response = await axios.get('http://localhost:3000/igdb-api', {
           params: {
             token:`${token}`,
-            method: `${metodo}` // Substitua pelo seu token de acesso
+            method: `${metodo}`,
+            url: `${url}` // Substitua pelo seu token de acesso
           }
         });
         setGames(response.data);

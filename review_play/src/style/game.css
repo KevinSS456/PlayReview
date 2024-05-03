@@ -1,4 +1,28 @@
-img{
-    margin: 10px;
-    width: 200px;
+.conteiner{
+    background-color: rgb(117, 50, 50);
+}
+#cover{
+    margin: 40px;
+    width: 300px;
+}
+.gameName{
+   font-size: 20px;
+   margin: 10px;
+}
+.textGame{
+    font-size: 30px;
+    margin: 5px;
+}
+
+
+.similares{
+    display: flex  ;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-size: 0px;
+    
+}
+.similares img{
+    width: 100px;
 }
