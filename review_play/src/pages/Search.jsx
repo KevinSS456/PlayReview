@@ -5,7 +5,7 @@ const Search = () => {
     const [searchParans] = useSearchParams()
     const query = searchParans.get("q")
 
-    const metodo = `*, cover.url;  limit 100;  search "${query}" ;  `
+    const metodo = `*, cover.url; search "${query}"; where hypes > 0 ;limit 100; `
     const games = getGame(metodo,query)
 
 

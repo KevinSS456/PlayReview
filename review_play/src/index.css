@@ -3,13 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Inversionz';
+    src: url('assets/fonts/inversionz/Inversionz.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/roboto/Roboto-Light.ttf') format('truetype');
+  }
+  
+html {
+    font-size: 62.5%; /* 62.5% de 16px = 10px */
+}
 body{
-    background-color: black;
     color: white;
+    background-color:#05262D
 }
 a{
     text-decoration: none;
-    color: rgb(176, 35, 176);
     margin: 10px;
     transition: .5s;
 }

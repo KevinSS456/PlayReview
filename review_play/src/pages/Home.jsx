@@ -9,16 +9,23 @@ import '../style/home.css'
 const number = 2000
 
 const Home = () => {
-  const metodo = `*, cover.url; rating; sort rating desc; limit 20`
-  const games = getGame(metodo)
+
+  const timestamp = Date.now();
+  console.log(timestamp/1000)
+  const numero = parseInt(timestamp/1000)
+  const metodo_recent = `*, hypes,release_dates.date; where hypes > 0 & release_dates.date > ${numero}; sort hypes desc; limit 20;`
+  
+  
+  
+  const recents = getGame(metodo_recent)
 
 
   return (
-    <div>
+    <div className='conteinerHome'>
       <h1>Jogos com classificação superior a 75</h1>
 
-        {games.length === 0 && <p>Carregando..</p>}
-        {games.map(game => (
+        {recents.length === 0 && <p>Carregando..</p>}
+        {recents.map(game => (
           <GameCard key={game.id} gameID={game.id} />
         ))}
 

@@ -1,6 +1,10 @@
 import { Link,useNavigate } from "react-router-dom"
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { useState } from "react"
+import Logo from '../assets/Logo.png'
+import userIcon from '../assets/userIcon.png'
+
+import "../style/Navbar.css"
 
 const Navbar = () => {
     const [search, setSearch] = useState("")
@@ -18,16 +22,33 @@ const Navbar = () => {
 
     return (
         <nav id="navbar">
-            <h1>PlayReview</h1>
-            <h2>
-            <Link to="/">Home</Link>
-            </h2>
+            <Link to='/'>
+                <div id="logo_container">
+                <img src={Logo} alt="sim" id="imagemLogo"/>
+                <p id="logoText">gAMErANK</p>
+                </div>
+            </Link>
+            <div id="links_container">
+                 <h2 className="links">
+                    <Link to="/">Home</Link>
+                </h2>
+                <h2 className="links">
+                    <Link to="/">Lançamentos</Link>
+                </h2>
+                <h2 className="links">
+                    <Link to="/">Listas</Link>
+                </h2>
+            </div>
+            <div id="submit_container">
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Digite um jogo" onChange={(e) => setSearch(e.target.value)} value = {search}/>
+                <input id="Search"type="text" placeholder="" onChange={(e) => setSearch(e.target.value)} value = {search}/>
                 <button type="submit">
                 <BiSearchAlt2 />
                 </button>
             </form>
+            <Link to='/'><img src={userIcon} alt="sim" id="userIcon"/></Link>
+            </div>
+
         </nav>
     )
 }
