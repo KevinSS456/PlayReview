@@ -19,10 +19,11 @@ const Game = () => {
 
 
     return(
-    <div className="conteiner"> 
+    <div className="conteiner_game"> 
     {games.length === 0 && <p>Carregando</p>}
     {games.map(game => (
         <div className="jogo">
+        div
          {game.cover && <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} id="cover"/>}
             <h1 className="gameName">{game.name}</h1>
          <h2 className="textGame">{game.summary}</h2>

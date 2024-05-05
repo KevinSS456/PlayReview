@@ -7,6 +7,14 @@
     height: 5.5rem;
     padding: 0 2rem;
 }
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0m;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
 #logo_container{
     display: flex;
     height: 100%;
@@ -34,6 +42,7 @@
     justify-content: center;
     font-family: "Roboto";
 }
+
 #links_container a {
     color: #FFE44B; 
     font-weight: 300;
