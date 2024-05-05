@@ -11,6 +11,7 @@
     display: flex;
     height: 100%;
     align-items: center;
+
     color: #FFE44B;
 }
 #imagemLogo{
@@ -20,6 +21,7 @@
 #logoText{
     font-size: 3rem;
     margin-left: 1.8rem;
+    margin-top: 0.9rem;
     font-family: 'Inversionz';
 }
 #links_container{
@@ -49,7 +51,7 @@
     justify-content: center;
     
 }
-form {
+#form {
     display: flex;
     position: relative;
     width: 14.3rem;
@@ -78,7 +80,7 @@ textarea:focus, input:focus, select:focus {
 
 
 
-button{
+#button_search{
 
     height: 100%;
     background-color: rgb(255, 255, 255);
@@ -90,6 +92,9 @@ button{
     align-items: center;
     font-size: 2.5rem;
 
+}
+#icon{
+    margin-bottom: 1.8rem;
 }
 #userIcon{
     width: 3.75rem;

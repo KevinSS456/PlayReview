@@ -11,13 +11,18 @@
     font-family: 'Roboto';
     src: url('assets/fonts/roboto/Roboto-Light.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('assets/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  }
   
 html {
     font-size: 62.5%; /* 62.5% de 16px = 10px */
 }
 body{
     color: white;
-    background-color:#05262D
+    background-color:#05262D;
+
 }
 a{
     text-decoration: none;
