@@ -40,10 +40,10 @@ const Navbar = () => {
                 </h2>
             </div>
             <div id="submit_container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="form">
                 <input id="Search"type="text" placeholder="" onChange={(e) => setSearch(e.target.value)} value = {search}/>
-                <button type="submit">
-                <BiSearchAlt2 />
+                <button type="submit" id="button_search">
+                <BiSearchAlt2 id='icon'/>
                 </button>
             </form>
             <Link to='/'><img src={userIcon} alt="sim" id="userIcon"/></Link>
