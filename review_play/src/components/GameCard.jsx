@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaStar} from 'react-icons/fa'
 import { getGame } from '../functions/SearchGame';
+import { getGener } from '../functions/SearchGeners';
 
 const GameCard = ({gameID, showLink = true}) => {
     

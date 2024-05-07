@@ -26,7 +26,7 @@ const Home = () => {
   return (
     
     <div className='conteinerHome'>
-        <div id='home'>
+        <div id='home' class='w-100 d-inline-block'>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -36,17 +36,17 @@ const Home = () => {
             <div class="carousel-inner">
                 <div class="carousel-item active">
                 <Link to='/game/52189'>
-                   {wallpaper_GTA.map(scree =>(<img class="d-block w-100" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
+                   {wallpaper_GTA.map(scree =>(<img class="w-100 d-inline-block h-75 d-inline-block" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
                 </Link>
                 </div>
                  <div class="carousel-item">
                  <Link to='/game/31551'>
-                   {wallpaper_FF.map(scree =>(<img class="d-block w-100" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))[0]}
+                   {wallpaper_FF.map(scree =>(<img class="w-100 d-inline-block" src={scree.url.replace('thumb', '1080p')} alt={'Segundo Slide'} className="bgHome"/>))[0]}
                    </Link>
                  </div>
                  <div class="carousel-item">
                  <Link to='/game/127342'>
-                    {wallpaper_Senua.map(scree =>(<img class="d-block w-100" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
+                    {wallpaper_Senua.map(scree =>(<img class="w-100 d-inline-block h-75 d-inline-block" src={scree.url.replace('thumb', '1080p')} alt={'Terceiro Slide'} className="bgHome"/>))}
                     </Link>
                  </div>
             </div>

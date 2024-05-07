@@ -1,34 +1,97 @@
 
 import { useParams } from "react-router-dom"
 import { getGame } from '../functions/SearchGame'
+import { getGener } from "../functions/SearchGeners"
 import GameCard from "../components/GameCard"
 import "../style/game.css"
+import { FaStar} from 'react-icons/fa'
 
 
 const Game = () => {
     const {id} = useParams()
+    var valores = []
+
+    const sabe= getGener([5,11,16])
+     sabe.then(resultado => {
+        valores = resultado
+        console.log(valores)// Aqui você tem acesso ao resultado da promise
+    })
 
     const metodo = `*, cover.url; where id = ${id}`
     const metodo_screns = `*; where game = ${id};`
     
     const link = 'https://api.igdb.com/v4/screenshots'
     const link_video = 'https://api.igdb.com/v4/game_videos'
+    
     const games = getGame(metodo,id)
     const screens = getGame(metodo_screns,id,link)
     const video = getGame(metodo_screns,id,link_video)
+    
+    
+    const gener = games.map(gamer =>
+            (gamer.genres)
+    )
+    
+    
+    
+ 
 
+    const data = games.map(gamer =>
+        (gamer.first_release_date)
+    )
+    
+    
 
+    console.log(data[0])
+    const date = new Date(data[0] * 1000)
+    var dia = date.getDate();
+    var mes = date.getMonth() + 1; // Os meses começam em zero, então adicionamos 1
+    var ano = date.getFullYear();
+    console.log(dia+'/'+mes+'/'+ano)
+    
     return(
-    <div className="conteiner_game"> 
+    <div>
     {games.length === 0 && <p>Carregando</p>}
     {games.map(game => (
-        <div className="jogo">
-        div
-         {game.cover && <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} id="cover"/>}
+        <div>
+        <div className="conteiner_game"> 
+            <div id="item-1">
+            {game.cover && <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} id="cover"/>}
+            </div>
+            <div id="item-2">
             <h1 className="gameName">{game.name}</h1>
-         <h2 className="textGame">{game.summary}</h2>
-         <p className="textGame">{game.storyline}</p>
-         <div className="screenshots">
+            </div>
+            <div id="item-3">
+                <p>Lançamento: {dia+'/'+mes+'/'+ano}</p>
+                <p>{valores[0]}</p>
+                <p>Perspectiva: Seila</p>
+                <p>Dublado:Sim</p>
+            </div>
+            <div id="item-4">
+                <h2 className="" id="make_reviw_text">Reviews</h2>
+            
+                <FaStar className="star"/>
+                <FaStar className="star"/>
+                <FaStar className="star"/>
+                <FaStar className="star"/>
+                <FaStar className="star"/>
+
+                <div className="botao" id='saiba'>
+                    <h3>Fazer Review</h3>
+                </div>
+            
+            </div>
+            <div id="item-5">
+                <p className="textGame">{game.storyline == null ? game.summary : game.storyline}</p>
+            </div>
+            <div id="item-6">
+            {game.similar_games.map((item, index) => <GameCard key={game.similar_games[index]} gameID={game.similar_games[index]}/>)[0]}
+            </div>
+        </div>
+        
+            
+            
+            <div className="screenshots">
          
             {screens.map(foto =>(<img src={foto.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} id="screen"/>))}
             {video.map(urlvideo =>(<iframe
@@ -41,16 +104,14 @@ const Game = () => {
       >     </iframe>))[0]}
             
          </div>
-        <div className="similares">
-            {game.similar_games.map((item, index) => <GameCard key={game.similar_games[index]} gameID={game.similar_games[index]}/>)}
-        </div>
+        
 
 
         </div>
-        ))}
+    ))}
     </div>
     )
-    
 }
+
 
 export default Game

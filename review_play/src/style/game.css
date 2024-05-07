@@ -1,20 +1,81 @@
-.container_game{
+.conteiner_game{
+    width: 100%;
     display: grid;
-    grid-template-columns: ;
-}
-#cover{
-    margin: 40px;
-    width: 300px;
-}
-.gameName{
-   font-size: 20px;
-   margin: 10px;
-}
-.textGame{
-    font-size: 30px;
-    margin: 5px;
+    padding: 2rem 6.254rem;
+    grid-template-columns: 40rem auto auto;
+    grid-template-rows: 15rem auto auto;
 }
 
+#item-1{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: start;
+    width: 40rem;
+    padding: 5rem;
+    
+}
+h1{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+#item-2{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    letter-spacing: -1.5rem;
+    justify-self: start;
+    align-self: start;
+    align-items: center;
+    padding: 4rem 1rem;
+    max-height: 6rem;
+}
+#item-3{
+    padding: 0 2rem;
+    font-size: 2rem;
+    font-family: "Roboto Mono";
+}
+#item-5{
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+    font-size: 10px;
+    width: 80rem;
+}
+#item-6{
+    justify-self: start;
+    align-items: center;
+}
+
+#cover{
+    width: 100%;
+}
+.gameName{
+   font-size: 5vw;
+   margin: 0;
+   font-family: 'Inversionz Unboxed';
+   line-height: 0.8;
+}
+.textGame{
+    font-size: 1.5rem;
+    font-family: "Roboto Mono";
+    font-weight: 300;
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23rem;
+    height: 4.3rem;
+    border: 5px solid #FFE44B;
+    border-radius: 15px;
+    background: rgba(255, 228, 75, 0.10);
+    cursor: pointer;
+ }
+ .botao:hover{
+    background-color: #FFE44B;
+    color: aliceblue;
+ }
 
 .similares{
     display: flex  ;
