@@ -3,13 +3,15 @@
    width: 100%;
    height: 100%;
 }
-
-#saiba{
-   margin-bottom: 5rem;
+a:hover{
+   text-decoration: none;
 }
 .bgHome{
    width: 100%;
-   min-height: 100%;
+  height: 65rem;
+}
+.carousel-inner  img{
+   object-fit: cover; /* Altura fixa */ /* 50% da altura da viewport */
 }
 
 .botao{
@@ -19,20 +21,81 @@
    width: 23rem;
    height: 4.3rem;
    border: 5px solid #FFE44B;
+   color: #FFE44B;
    border-radius: 15px;
    background: rgba(255, 228, 75, 0.10);
+  
 }
-#botaoSaibaMais{
-
+.botao:hover{
+   background-color: #FFE44B;
+   color: aliceblue;
+}
+#textbotao{
    font-family: "Roboto Mono";
-   font-size: 2.4rem;
-   color: #FFE44B;
    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
    font-style: normal;
-   font-weight: 700px;
+   font-weight: 700;
    line-height: normal;
-   
- 
+}
+
+.carousel-caption h5{
+   font-family: 'Inversionz Unboxed';
+   font-size: 4rem;
+}
+.carousel-caption p{
+   font-size: 1.8rem;
+   font-family: "Roboto Mono";
+}
+#home2{
+   margin-top: 2rem;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.title{
+   font-family: 'Inversionz';
+   font-size: 9rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #FFE44B;
+   letter-spacing: -0.9rem;
+}
+.subtitle{
+   font-family: "Roboto Flex";
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2.2rem;
+}
+#infoHome{
+   margin: 5rem;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 5rem;
+}
+.liHome{
+   width: 36.5rem;
+   font-size: 2.4rem;
+   font-family: "Roboto Flex";
+   font-style: normal;
+   font-weight: 500;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+}
+
+.iconHome{
+   width: 5.5rem;
+   margin-right: 1.4rem;
+}
+#botaoComeça{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 img{
