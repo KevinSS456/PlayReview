@@ -13,11 +13,10 @@ const GameCard = ({gameID, showLink = true}) => {
 
             {games.map(game => (
                 
-                <div>
+                <div className='game-card-items'>
                     {showLink && <Link to={`../game/${gameID}`}>
-                    <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} />
                     <h2>{game.name}  </h2>
-                    <p><FaStar />{game.rating}</p>
+                    <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} />
                     </Link>}
                 </div>
             ))}

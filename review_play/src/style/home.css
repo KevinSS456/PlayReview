@@ -97,8 +97,82 @@ a:hover{
    align-items: center;
    justify-content: center;
 }
+#home3{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 1rem;
+   border: 0.6rem solid #03151A;
+   background-color: #03151A;
+   border-radius: 2rem;
+}
+#proxTitle{
+   color: #FFE44B;
+   font-family: "Roboto Mono";
+   font-size: 3.5rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   margin-bottom: 1.5rem;
+   margin-top: 1.5rem;
+}
+.CardStyle{
+   display: flex;
+   flex-direction: row; 
+}
+.game-card{
+   background-color: #FFE44B;
+   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.55);
+   background: rgba(255, 255, 255, 0.04);
+   width: 30rem;
+   padding: 2rem;
+   margin: 2rem;
+   border-radius: 2rem;
+}
+.game-card a{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.game-card h2{
+   text-align: center;
+   margin-bottom: 2rem;
+   height: 4.8rem;
+   color: #e2d955;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   font-family: "Roboto Mono";
+   font-size: 1.8rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
+}
+.buttonareal{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.arrowHome{
+   width: 2rem;
+   height: 2rem;
+}
+#buttonLeft{
+   transform: rotate(180deg)
+}
+footer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #03151A;
+   font-size: 2rem;
+}
 
 img{
    width: 200px;
+ 
 }
 
