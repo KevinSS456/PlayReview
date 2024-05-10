@@ -121,7 +121,7 @@ const Home  = () => {
                 <p className='liHomeText'>Compartilhe o seu amor pelo jogo favorito com amigos.</p>
               </li>
             </ul>
-          <Link to=''>
+          <Link to='Login'>
           <div className="botao" id='botaoComeça'>
             <h3 id='textbotao'>COMECE AGORA !</h3>
           </div>

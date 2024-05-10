@@ -1,0 +1,13 @@
+.conteiner{
+
+}
+.loginTitle{
+    font-family: 'Inversionz Unboxed';
+    color: #FFE44B;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.6rem;
+}
