@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Login= () => {
     return (
-    <div className="conteiner">
+    <div className="conteinerLogin">
         
         <div className="headerLogin">
             <h1 className="loginTitle">Bem vindo de volta</h1>
@@ -33,7 +33,7 @@ const Login= () => {
     <div className="changes">
         <h2 className="textfrom">Esqueceu a Senha ? 
              <Link><span id="spanlogin"> Clique aqui</span></Link></h2>
-             <Link><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastro</span></button></Link>
+             <Link to='Cadastro'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastro</span></button></Link>
     </div>
         
     </div>

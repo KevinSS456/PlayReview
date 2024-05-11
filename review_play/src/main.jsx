@@ -9,6 +9,7 @@ import Search from './pages/Search.jsx'
 import Listgames from './pages/Listgames.jsx'
 import Mylist from './pages/Mylist.jsx'
 import Login from './pages/login.jsx'
+import Cadastro from './pages/Cadastro.jsx'
 
 import './index.css'
 
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='listgames/:type' element={<Listgames />}/>
           <Route path='Mylist' element={<Mylist />}/>
           <Route path='Login' element={<Login />}/>
+          <Route path='Login/Cadastro' element={<Cadastro />}/>
         </Route>
       </Routes>
     </BrowserRouter>
