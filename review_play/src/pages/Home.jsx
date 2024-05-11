@@ -15,6 +15,8 @@ const number = 2000
 const Home  = () => {
 
   const [i, setContador] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible_left, setIsVisible_left] = useState(false);
 
 
   var x = 1
@@ -24,19 +26,21 @@ const Home  = () => {
 
   function nextGames(){
 
-    if (i === 10) {
-      setContador(0); // Reinicia o contador quando atingir 20
+    if (i === 15) {
+      setIsVisible(false);
     } else {
       setContador(i + 1);
+      setIsVisible_left(true)
     }
     
   }
   function prevtGames(){
 
-    if (i === 20) {
-      setContador(0); // Reinicia o contador quando atingir 20
+    if (i === 0) {
+      setIsVisible_left(false)
     } else {
       setContador(i - 1);
+      setIsVisible(true);
     }
     
   }
@@ -133,24 +137,24 @@ const Home  = () => {
           <h2 id='proxTitle'>Lançamentos de Maio</h2>
           {recents.length === 0 && <p>Carregando..</p>}
        <div className="CardStyle">
-        <div className="buttonareal" id='buttonLeft' onClick={prevtGames}>
+      {isVisible_left && <div className="buttonareal" id='buttonLeft' onClick={prevtGames}>
           <img src={arrow} alt="arrow" className='arrowHome'/>
-          </div>
+          </div>}
        {recents.map(game => (
         <GameCard key={game.id} gameID={game.id} />
        ))[i]}
        {recents.map(game => (
         <GameCard key={game.id} gameID={game.id} />
-       ))[(i+1)]}
+       ))[(i+x)]}
        {recents.map(game => (
         <GameCard key={game.id} gameID={game.id} />
-       ))[(i+2)]}
+       ))[(i+y)]}
        {recents.map(game => (
         <GameCard key={game.id} gameID={game.id} />
-       ))[(i+3)]}
-       <div className="buttonareal" onClick={nextGames}>
+       ))[(i+z)]}
+       {isVisible && <div className="buttonareal" onClick={nextGames}>
           <img src={arrow} alt="arrow" className='arrowHome'/>
-          </div>
+          </div>}
        </div>
       </div>
       
