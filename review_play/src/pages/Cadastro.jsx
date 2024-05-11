@@ -1,6 +1,9 @@
 import React from "react"
 import '../style/cadastro.css'
 import { Link } from 'react-router-dom';
+import { FaFacebook } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
 
 const Cadastro= () => {
     return(
@@ -20,18 +23,21 @@ const Cadastro= () => {
    
     <div id="buttonsCadas">
         <button className="conectionbutton">
+            <FaGoogle />
             <p>Cadastrar com Google</p>
         </button>
         <button className="conectionbutton">
+             <FaFacebook className="iconConnection"/>
             <p>Cadastrar com Facebook</p>
         </button>
         <button className="conectionbutton">
+            <FaApple className="iconConnection"/>
             <p>Cadastrar com Aple</p>
         </button>
     </div>
     
     <div className="changes">
-             <Link to='Home'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar</span></button></Link>
+             <Link to='Home'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
     </div>
     </div>
 

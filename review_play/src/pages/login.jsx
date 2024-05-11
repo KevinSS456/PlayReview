@@ -1,6 +1,10 @@
 import React from "react"
 import '../style/login.css'
 import { Link } from 'react-router-dom';
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
+
 
 const Login= () => {
     return (
@@ -20,12 +24,15 @@ const Login= () => {
    
     <div className="buttonsLogin">
         <button className="conectionbutton">
+            <FaGoogle className="iconConnection" />
             <p>Entrar com Google</p>
         </button>
         <button className="conectionbutton">
+            <FaFacebook  className="iconConnection"/>
             <p>Entrar com Facebook</p>
         </button>
         <button className="conectionbutton">
+            <FaApple  className="iconConnection"/>
             <p>Entrar com Aple</p>
         </button>
     </div>
