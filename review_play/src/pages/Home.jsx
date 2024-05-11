@@ -102,6 +102,7 @@ const Home  = () => {
             </a>
           </div>
       </div>
+
       <div id="home2">
           <div className="titleHome2">
               <p className="title">BEM VINDO A gAMErANK</p>
@@ -127,6 +128,7 @@ const Home  = () => {
           </div>
           </Link>
       </div>
+
       <div id="home3">
           <h2 id='proxTitle'>Lançamentos de Maio</h2>
           {recents.length === 0 && <p>Carregando..</p>}
@@ -149,10 +151,9 @@ const Home  = () => {
        <div className="buttonareal" onClick={nextGames}>
           <img src={arrow} alt="arrow" className='arrowHome'/>
           </div>
-
        </div>
-       
       </div>
+      
       <footer>
           <p>@GamerRank</p>
       </footer>
