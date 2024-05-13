@@ -122,7 +122,6 @@ a:hover{
    flex-direction: row; 
 }
 .game-card{
-   background-color: #FFE44B;
    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.55);
    background: rgba(255, 255, 255, 0.04);
    width: 30rem;

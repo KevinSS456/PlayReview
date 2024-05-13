@@ -6,11 +6,35 @@ import { getGener } from "../functions/SearchGeners"
 import GameCard from "../components/GameCard"
 import "../style/game.css"
 import { FaStar} from 'react-icons/fa'
+import arrow from '../assets/arrow.png'
 
 
 const Game = () => {
     const {id, gener } = useParams()
+    const [i, setContador] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible_left, setIsVisible_left] = useState(false);
+
+    function nextGame(){
+
+        if (i === 5) {
+          setIsVisible(false);
+        } else {
+          setContador(i + 1);
+          setIsVisible_left(true)
+        }
+        
+      }
+      function prevtGame(){
     
+        if (i === 0) {
+          setIsVisible_left(false)
+        } else {
+          setContador(i - 1);
+          setIsVisible(true);
+        }
+        }
+        
 
         console.log(gener)
 
@@ -87,7 +111,13 @@ const Game = () => {
                     <p className="textGame">{game.storyline == null ? game.summary : game.storyline}</p>
                 </div>
                 <div id="item-6">
-                {game.similar_games.map((item, index) => <GameCard key={game.similar_games[index]} gameID={game.similar_games[index]}/>)[0]}
+                {isVisible_left && <div className="buttonareal" id='buttonLeft' >
+                    <img src={arrow} alt="arrow" className='arrowGame' onClick={prevtGame}/>
+                </div>}
+                {game.similar_games.map((item, index) => <GameCard key={game.similar_games[index]} gameID={game.similar_games[index]}/>)[i]}
+                {isVisible &&<div className="buttonareal">
+                    <img src={arrow} alt="arrow" className='arrowGame'onClick={nextGame}/>
+                </div>}
                 </div>
             </div>
             
