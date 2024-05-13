@@ -18,6 +18,9 @@ const Home  = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isVisible_left, setIsVisible_left] = useState(false);
 
+  const year = 2024
+  const startDate = new Date(year, 5 - 1, 1).getTime() / 1000; // Convertendo para segundos
+  const endDate = new Date(year, 5 , 0).getTime() / 1000;
 
   var x = 1
   var y = 2
@@ -48,7 +51,7 @@ const Home  = () => {
   console.log(timestamp/1000)
   const numero = parseInt(timestamp/1000)
   const link_screenn = 'https://api.igdb.com/v4/artworks'
-  const metodo_recent = `*, hypes,release_dates.date; where hypes > 0 & release_dates.date > ${numero} & version_parent = null; sort hypes desc; limit 20 ;`
+  const metodo_recent = `*, hypes,release_dates.date; where hypes > 0 &  release_dates.date >= ${startDate}  & version_parent = null; sort hypes desc; limit 20 ;`
   const metodo_Senua = `*; where game = 127342;`
   const metodo_FF= `*; where game = 31551;`
   const metodo_Elden = `*; where game = 240009;`
@@ -73,7 +76,7 @@ const Home  = () => {
                         <h5>Senua's Saga: Hellblade II</h5>
                         <p>Entre e faça sua review</p>
                     </div>
-                <Link to='/game/127342'>
+                <Link to='/game/127342/31'>
                    {wallpaper_Senua.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
                 </Link>
                 </div>
@@ -82,7 +85,7 @@ const Home  = () => {
                         <h5>Final Fantasy 15</h5>
                         <p>Entre e faça sua  review</p>
                     </div>
-                 <Link to='/game/31551'>
+                 <Link to='/game/31551/12'>
                    {wallpaper_FF.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Segundo Slide'} className="bgHome"/>))[0]}
                    </Link>
                  </div>
@@ -91,7 +94,7 @@ const Home  = () => {
                         <h5>Elden Ring: Shadow of the Erdtree</h5>
                         <p>Entre e faça a sua review</p>
                     </div>
-                 <Link to='/game/240009'>
+                 <Link to='/game/240009/12,31'>
                     {wallpaper_Elden.map(scree =>(<img  class="w-100  h-65  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Terceiro Slide'} className="bgHome"/>))}
                     </Link>
                  </div>

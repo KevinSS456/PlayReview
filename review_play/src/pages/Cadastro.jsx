@@ -32,7 +32,7 @@ const Cadastro= () => {
         </button>
         <button className="conectionbutton">
             <FaApple className="iconConnection"/>
-            <p>Cadastrar com Aple</p>
+            <p>Cadastrar com Apple</p>
         </button>
     </div>
     

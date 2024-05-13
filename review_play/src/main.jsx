@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route element={<App />}>
           <Route path='/' element={<Home />}/>
-          <Route path='game/:id' element={<Game />}/>
+          <Route path='game/:id/:gener' element={<Game />}/>
           <Route path='search' element={<Search />}/>
           <Route path='listgames/:type' element={<Listgames />}/>
           <Route path='Mylist' element={<Mylist />}/>
