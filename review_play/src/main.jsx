@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='listgames/:type' element={<Listgames />}/>
           <Route path='Mylist' element={<Mylist />}/>
           <Route path='Login' element={<Login />}/>
-          <Route path='Login/Cadastro' element={<Cadastro />}/>
+          <Route path='Cadastro' element={<Cadastro />}/>
         </Route>
       </Routes>
     </BrowserRouter>

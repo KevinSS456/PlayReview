@@ -22,22 +22,25 @@ const Cadastro= () => {
     </form>
    
     <div id="buttonsCadas">
-        <button className="conectionbutton">
-            <FaGoogle />
+        <button className="conectionbutton" id="connectionBCadastro">
+            <FaGoogle className="iconConnection" />
             <p>Cadastrar com Google</p>
         </button>
-        <button className="conectionbutton">
+        <button className="conectionbutton" id="connectionBCadastro">
              <FaFacebook className="iconConnection"/>
             <p>Cadastrar com Facebook</p>
         </button>
-        <button className="conectionbutton">
+        <button className="conectionbutton" id="connectionBCadastro">
             <FaApple className="iconConnection"/>
             <p>Cadastrar com Apple</p>
         </button>
     </div>
     
     <div className="changes">
-             <Link to='Home'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
+    <Link to='Home'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
+    <h2 className="textfrom" >Já tem uma conta ?
+             <Link to='../Login'><span id="spanlogin"> Clique aqui</span></Link></h2>
+             
     </div>
     </div>
 

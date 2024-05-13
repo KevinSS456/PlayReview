@@ -46,7 +46,7 @@ const Navbar = () => {
                 <BiSearchAlt2 id='icon'/>
                 </button>
             </form>
-            <Link to='/'><img src={userIcon} alt="sim" id="userIcon"/></Link>
+            <Link to='Login'><img src={userIcon} alt="sim" id="userIcon"/></Link>
             </div>
 
         </nav>
