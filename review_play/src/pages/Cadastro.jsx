@@ -9,7 +9,7 @@ const Cadastro= () => {
     return(
     <div className="conteinerCadas">
         <div className="headerCadastro">
-            <h1 className="loginTitle" id="cadastroTitle">BEM VINDO gAMErANK</h1>
+            <h1 className="loginTitle" id="cadastroTitle">BEM VINDO A gAMErANK</h1>
     </div>
    
     <form action="" className="forms">
@@ -37,7 +37,7 @@ const Cadastro= () => {
     </div>
     
     <div className="changes">
-    <Link to='Home'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
+    <Link to='../Escolha'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
     <h2 className="textfrom" >Já tem uma conta ?
              <Link to='../Login'><span id="spanlogin"> Clique aqui</span></Link></h2>
              
