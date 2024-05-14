@@ -10,7 +10,11 @@
 .card{
    background-color: blue;
 }
+.svg-path {
+    fill: white;
+    transition: fill 0.3s ease; /* Adiciona uma transição suave */
+}
 
-path:hover{
-    color: yellow;
+.svg-container:hover .svg-path {
+    fill: yellow;
 }
