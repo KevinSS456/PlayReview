@@ -51,7 +51,7 @@ const Home  = () => {
   console.log(timestamp/1000)
   const numero = parseInt(timestamp/1000)
   const link_screenn = 'https://api.igdb.com/v4/artworks'
-  const metodo_recent = `*, hypes,release_dates.date; where hypes > 0 &  release_dates.date >= ${numero}  & version_parent = null; sort hypes desc; limit 20 ;`
+  const metodo_recent = `*, hypes,release_dates.date; where hypes > 0 & version_parent = null &  release_dates.date >= ${startDate}; sort hypes desc; limit 20 ;`
   const metodo_Senua = `*; where game = 127342;`
   const metodo_FF= `*; where game = 31551;`
   const metodo_Elden = `*; where game = 240009;`

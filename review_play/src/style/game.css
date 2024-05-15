@@ -3,7 +3,7 @@
     display: grid;
     padding: 2rem 6.254rem;
     grid-template-columns: 40rem auto auto;
-    grid-template-rows: 15rem 30rem auto;
+    grid-template-rows: 15rem auto auto;
 }
 
 #item-1{
