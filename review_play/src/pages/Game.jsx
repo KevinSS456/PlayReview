@@ -125,15 +125,40 @@ const Game = () => {
                 
                 <div className="screenshots">
             
-                {screens.map(foto =>(<img src={foto.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} id="screen"/>))}
-                {video.map(urlvideo =>(<iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${urlvideo.video_id}`}
-                title="Video Player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-        >     </iframe>))[0]}
+                
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="First slide"/>))[0]}
+                        </div>
+                        <div class="carousel-item">
+                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Second slide"/>))[1]}
+                        </div>
+                        <div class="carousel-item">
+                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Third slide"/>))[2]}
+                        </div>
+                        <div class="carousel-item">
+                        {video.map(urlvideo =>(<iframe
+                        class="d-block w-100"
+                        height="500"
+                        src={`https://www.youtube.com/embed/${urlvideo.video_id}`}
+                        title="Video Player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        alt="Fourth slide">           
+                        </iframe>))[0]}
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+                
                 
             </div>
             
