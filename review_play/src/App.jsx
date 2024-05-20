@@ -1,5 +1,6 @@
 import './App.css'
 import {  Outlet } from "react-router-dom"
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -10,7 +11,8 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      < Outlet />
+      <Outlet />
+      <Footer />
     </div>
     
   )

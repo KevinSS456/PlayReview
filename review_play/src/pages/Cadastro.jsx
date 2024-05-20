@@ -42,6 +42,7 @@ const Cadastro= () => {
              <Link to='../Login'><span id="spanlogin"> Clique aqui</span></Link></h2>
              
     </div>
+        
     </div>
 
 )}

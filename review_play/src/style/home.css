@@ -105,7 +105,8 @@ a:hover{
    margin-top: 1rem;
    border: 0.6rem solid #03151A;
    background-color: #03151A;
-   border-radius: 2rem;
+   border-top-left-radius: 2rem;
+   border-top-right-radius: 2rem;
 }
 #proxTitle{
    color: #FFE44B;
@@ -162,13 +163,7 @@ a:hover{
 #buttonLeft{
    transform: rotate(180deg)
 }
-footer{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: #03151A;
-   font-size: 2rem;
-}
+
 
 img{
    width: 200px;

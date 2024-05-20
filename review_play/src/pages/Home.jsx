@@ -161,9 +161,7 @@ const Home  = () => {
        </div>
       </div>
       
-      <footer>
-          <p>@GamerRank</p>
-      </footer>
+      
    
       </div>
 

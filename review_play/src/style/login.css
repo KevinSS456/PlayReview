@@ -1,10 +1,9 @@
 .conteinerLogin{
     width: 100%;
-    height: 100%;
     display: grid;
     padding: 2rem 6.254rem;
     grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     column-gap: 3rem;
     
 }
@@ -15,6 +14,10 @@
     justify-self: center;
     margin-bottom: 6rem;
     margin-top: 6rem;
+}
+.conteinerLogin p {
+    margin-top: 0;
+    margin-bottom: 0; 
 }
 
 .loginTitle{
@@ -96,7 +99,6 @@
 .changes{
     margin-top: 2rem;
     grid-row-start: 3;
-    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 5;
     justify-self: center;
