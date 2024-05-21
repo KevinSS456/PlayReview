@@ -9,7 +9,7 @@ const Search = () => {
     const [searchParans] = useSearchParams()
     const query = searchParans.get("q")
 
-    const metodo = `*, hypes,popularity, cover.url; where name ~ *"${query}"*; limit 20;sort popularity desc`
+    const metodo = `*, hypes,popularity, cover.url; where  name ~ *"${query}"*; limit 30;sort hypes desc;`
     const games = getGame(metodo,query)
     const [search, setSearch] = useState("")
     const navigate = useNavigate()

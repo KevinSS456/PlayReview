@@ -41,15 +41,18 @@ const Game = () => {
         const metodo = `*, cover.url; where id = ${id}`
         const metodo_screns = `*; where game = ${id};`
         const metodo_gener = `*; where id = (${gener});`
+    
 
         const link = 'https://api.igdb.com/v4/screenshots'
         const link_video = 'https://api.igdb.com/v4/game_videos'
         const link_gener = 'https://api.igdb.com/v4/genres/'
+        const link_screenn = 'https://api.igdb.com/v4/artworks'
         
         const games = getGame(metodo,id)
         const screens = getGame(metodo_screns,id,link)
         const video = getGame(metodo_screns,id,link_video)
         const gen = getGame(metodo_gener,id,link_gener)
+        const wpp = getGame(metodo_screns,id,link_screenn)
         
     
        
@@ -68,7 +71,7 @@ const Game = () => {
         var ano = date.getFullYear();
         console.log(dia+'/'+mes+'/'+ano)
     
-    
+        $('.carousel').carousel('pause')
     
     
  
@@ -123,44 +126,43 @@ const Game = () => {
             
                 
                 
-                <div className="screenshots">
-            
-                
-                <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="First slide"/>))[0]}
-                        </div>
-                        <div class="carousel-item">
-                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Second slide"/>))[1]}
-                        </div>
-                        <div class="carousel-item">
-                        {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Third slide"/>))[2]}
-                        </div>
-                        <div class="carousel-item">
-                        {video.map(urlvideo =>(<iframe
-                        class="d-block w-100"
-                        height="500"
-                        src={`https://www.youtube.com/embed/${urlvideo.video_id}`}
-                        title="Video Player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        alt="Fourth slide">           
-                        </iframe>))[0]}
-                        </div>
+            {wpp.map(scree =>(
+            <div className="mother-screen" style={{ backgroundImage: `url(${scree.url.replace('thumb', '1080p')})` }}>
+                    <div className="screenshots">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="First slide"/>))[0]}
+                                </div>
+                                <div class="carousel-item">
+                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Second slide"/>))[1]}
+                                </div>
+                                <div class="carousel-item">
+                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Third slide"/>))[2]}
+                                </div>
+                                <div class="carousel-item">
+                                {video.map(urlvideo =>(<iframe
+                                class="d-block w-100"
+                                height="560"
+                                src={`https://www.youtube.com/embed/${urlvideo.video_id}`}
+                                title="Video Player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                alt="Fourth slide">           
+                                </iframe>))[0]}
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    </div>
-                
-                
-            </div>
+            </div>))[0]}
             
 
 

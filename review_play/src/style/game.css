@@ -134,5 +134,24 @@ h1{
     width: 100px;
 }
 .screenshots{
-    width: 60%;
+    position: relative;
+    width: 75%;
+    z-index: 2;
+    
 }
+.mother-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70rem;
+    padding: 5rem;
+    margin: 5rem 0;
+    overflow: hidden;
+    background-size: cover; /* Cobrir totalmente a área da div com a imagem */
+    background-position: center;
+    
+}
+.carousel .carousel-item {
+    transition: transform 1s ease, opacity 3s;
+  }
