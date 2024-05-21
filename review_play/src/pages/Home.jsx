@@ -18,6 +18,10 @@ const Home  = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isVisible_left, setIsVisible_left] = useState(false);
 
+  for(let g = 0; g <10; g+=3){
+    console.log(g)
+  }
+
   const year = 2024
   const startDate = new Date(year, 5 - 1, 1).getTime() / 1000; // Convertendo para segundos
   const endDate = new Date(year, 5 , 0).getTime() / 1000;

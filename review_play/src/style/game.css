@@ -150,6 +150,7 @@ h1{
     overflow: hidden;
     background-size: cover; /* Cobrir totalmente a área da div com a imagem */
     background-position: center;
+    filter: grayscale(1);
     
 }
 .carousel .carousel-item {

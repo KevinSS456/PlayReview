@@ -6,7 +6,7 @@
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto  auto auto auto;
     column-gap: 3rem;
-    row-gap: 1.6rem;
+    row-gap: 2rem;
 }
 #EscolhaTitleArea{
     justify-self: center;
@@ -14,14 +14,52 @@
     grid-column-start: 1;
     grid-column-end: 5;
 }
-.buttonsArea{
+.mainArea{
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 4;
+    align-self: center;
+}
+#subtitleEscolha{
+    color: #FFE44B;
+    font-family: "Roboto Mono";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 2rem;
 }
 .buttonsArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+}
+.cardEscolhas{
+    width: 16rem;
+    height: 16rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #021115;
+    font-size: 2rem;
+    gap: 1.3rem;
+}
+.textGenres{
+    font-size: 2rem;
+    color: #FFF;
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 
+button:focus{
+   outline: none;
 }
 .card{
    background-color: blue;
@@ -30,7 +68,31 @@
     fill: white;
     transition: fill 0.3s ease; /* Adiciona uma transição suave */
 }
-
-.svg-container:hover .svg-path {
+.cardEscolhas:hover {
+    border: 2px solid #FFE44B;
+    
+}
+.cardEscolhas:hover .textGenres{
+    color: #FFE44B;
+    
+}
+.cardEscolhas:hover .svg-path {
     fill: yellow;
+}
+
+.cardEscolhas:focus{
+    border: 2px solid #FFE44B;
+}
+.cardEscolhas:focus .textGenres {
+   color: #FFE44B;
+}
+.cardEscolhas:focus .svg-path {
+    fill: yellow;
+}
+
+.area3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
 }
