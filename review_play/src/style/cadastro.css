@@ -4,7 +4,8 @@
     display: grid;
     padding: 2rem 6.254rem;
     grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 3rem;
 }
 .headerCadastro{
     grid-column-start: 1;
@@ -38,12 +39,14 @@
     grid-row-end: 2;
 }
 #connectionBCadastro{
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-top: 1.6rem;
+    
 }
 .changes{
     margin-top: 2rem;
     grid-row-start: 3;
+    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 5;
     justify-self: center;
@@ -51,4 +54,5 @@
 }
 #cadastrobutton{
     margin-bottom: 2rem;
+   margin-left: 9.2rem;
 }

@@ -9,37 +9,37 @@ const Cadastro= () => {
     return(
     <div className="conteinerCadas">
         <div className="headerCadastro">
-            <h1 className="loginTitle" id="cadastroTitle">BEM VINDO A gAMErANK</h1>
+            <h1 className="loginTitle" id="cadastroTitle">WELCOME TO  gAMErANK</h1>
     </div>
    
     <form action="" className="forms">
-        <label htmlFor="Nome" className="textfrom">Nome:</label>
+        <label htmlFor="Nome" className="textfrom">Name:</label>
         <input type="text" className="input"/>
         <label htmlFor="email" className="textfrom">Email:</label>
         <input type="text" className="input"/>
-        <label htmlFor="senha" className="textfrom" id="senha">Senha:</label>
+        <label htmlFor="senha" className="textfrom" id="senha">Password:</label>
         <input type="text" className="input"/>   
     </form>
    
     <div id="buttonsCadas">
         <button className="conectionbutton" id="connectionBCadastro">
             <FaGoogle className="iconConnection" />
-            <p>Cadastrar com Google</p>
+            <p>Sing up Google</p>
         </button>
         <button className="conectionbutton" id="connectionBCadastro">
              <FaFacebook className="iconConnection"/>
-            <p>Cadastrar com Facebook</p>
+            <p>Sing up Facebook</p>
         </button>
         <button className="conectionbutton" id="connectionBCadastro">
             <FaApple className="iconConnection"/>
-            <p>Cadastrar com Apple</p>
+            <p>Sing up Apple</p>
         </button>
     </div>
     
     <div className="changes">
-    <Link to='../Escolha'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastrar </span></button></Link>
-    <h2 className="textfrom" >Já tem uma conta ?
-             <Link to='../Login'><span id="spanlogin"> Clique aqui</span></Link></h2>
+    <Link to='../Escolha'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Sing Up</span></button></Link>
+    <h2 className="textfrom" >Are you registered already ?
+             <Link to='../Login'><span id="spanlogin"> Click here</span></Link></h2>
              
     </div>
         

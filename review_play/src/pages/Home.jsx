@@ -78,7 +78,7 @@ const Home  = () => {
                 <div class="carousel-item active">
                 <div class="carousel-caption d-none d-md-block">
                         <h5>Senua's Saga: Hellblade II</h5>
-                        <p>Entre e faça sua review</p>
+                        <p>Share your review</p>
                     </div>
                 <Link to='/game/127342/31'>
                    {wallpaper_Senua.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
@@ -87,7 +87,7 @@ const Home  = () => {
                  <div class="carousel-item">
                  <div class="carousel-caption d-none d-md-block">
                         <h5>Final Fantasy 15</h5>
-                        <p>Entre e faça sua  review</p>
+                        <p>Share your review</p>
                     </div>
                  <Link to='/game/31551/12'>
                    {wallpaper_FF.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Segundo Slide'} className="bgHome"/>))[0]}
@@ -96,7 +96,7 @@ const Home  = () => {
                  <div class="carousel-item">
                      <div class="carousel-caption d-none d-md-block">
                         <h5>Elden Ring: Shadow of the Erdtree</h5>
-                        <p>Entre e faça a sua review</p>
+                        <p>Share your review</p>
                     </div>
                  <Link to='/game/240009/12,31'>
                     {wallpaper_Elden.map(scree =>(<img  class="w-100  h-65  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Terceiro Slide'} className="bgHome"/>))}
@@ -116,32 +116,32 @@ const Home  = () => {
 
       <div id="home2">
           <div className="titleHome2">
-              <p className="title">BEM VINDO A gAMErANK</p>
-              <p className="subtitle">Aqui você descobre os melhores jogos do momento com a opinião de outros gamers!</p>
+              <p className="title">WELCOME TO gAMErANK</p>
+              <p className="subtitle">Dive into the world of gaming, guided by the opinions of passionate gamers like you!</p>
           </div>
             <ul id='infoHome'>
               <li className='liHome'>
               <img src={Clarity} alt="sim" className='iconHome'/>
-                <p className='liHomeText'>Salve todos os jogos que já jogou em uma lista única!</p>
+                <p className='liHomeText'>Keep track of all the games you've played in lists!</p>
               </li>
               <li className='liHome'>
               <img src={Coração} alt="sim" className='iconHome'/>
-                <p className='liHomeText'>Escreva e leia reviews sobre os jogos do momento.</p>
+                <p className='liHomeText'>Write and read reviews insights on the hottest games.</p>
               </li>
               <li className='liHome'>
               <img src={Ranking} alt="sim" className='iconHome'/>
-                <p className='liHomeText'>Compartilhe o seu amor pelo jogo favorito com amigos.</p>
+                <p className='liHomeText'>Spread the love for your favorite game with your friends.</p>
               </li>
             </ul>
           <Link to='../Cadastro'>
           <div className="botao" id='botaoComeça'>
-            <h3 id='textbotao'>COMECE AGORA !</h3>
+            <h3 id='textbotao'>START NOW  !</h3>
           </div>
           </Link>
       </div>
 
       <div id="home3">
-          <h2 id='proxTitle'>Lançamentos de Maio</h2>
+          <h2 id='proxTitle'>New Games</h2>
           {recents.length === 0 && <p>Carregando..</p>}
        <div className="CardStyle">
       {isVisible_left && <div className="buttonareal" id='buttonLeft' onClick={prevtGames}>

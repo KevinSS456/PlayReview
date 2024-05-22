@@ -11,36 +11,36 @@ const Login= () => {
     <div className="conteinerLogin">
         
         <div className="headerLogin">
-            <h1 className="loginTitle">Bem vindo de volta</h1>
+            <h1 className="loginTitle">welcome Back</h1>
     </div>
    
     <form action="" className="forms">
         <label htmlFor="email" className="textfrom">Email:</label>
         <input type="text" className="input"/>
-        <label htmlFor="senha" className="textfrom" id="senha">Senha:</label>
+        <label htmlFor="senha" className="textfrom" id="senha">Password:</label>
         <input type="text" className="input"/>
-        <button  className="botaoLogin"><p>ENTRAR</p></button>    
+        <button  className="botaoLogin"><p>Sing In</p></button>    
     </form>
    
     <div className="buttonsLogin">
         <button className="conectionbutton">
             <FaGoogle className="iconConnection" />
-            <p>Entrar com Google</p>
+            <p>Sing in Google</p>
         </button>
         <button className="conectionbutton">
             <FaFacebook  className="iconConnection"/>
-            <p>Entrar com Facebook</p>
+            <p>Sing in Facebook</p>
         </button>
         <button className="conectionbutton">
             <FaApple  className="iconConnection"/>
-            <p>Entrar com Aple</p>
+            <p>Sing in Aple</p>
         </button>
     </div>
     
     <div className="changes">
-        <h2 className="textfrom">Esqueceu a Senha ? 
-             <Link><span id="spanlogin"> Clique aqui</span></Link></h2>
-             <Link to='../Cadastro'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Cadastro</span></button></Link>
+        <h2 className="textfrom">Forgot the password ? 
+             <Link><span id="spanlogin"> Click here</span></Link></h2>
+             <Link to='../Cadastro'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Sing Up</span></button></Link>
     </div>
         
     </div>
