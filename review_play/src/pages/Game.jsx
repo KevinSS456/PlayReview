@@ -95,7 +95,10 @@ const Game = () => {
         console.log(dia+'/'+mes+'/'+ano)
     
         $('.carousel').carousel('pause')
-    
+        const getAltText = (index) => {
+            const positions = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
+            return `${positions[index]} Slide`;
+        };
     
  
 
@@ -160,15 +163,15 @@ const Game = () => {
                     <div className="screenshots">
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
                             <div class="carousel-inner" id="image">
-                                <div class="carousel-item active">
-                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="First slide"/>))[0]}
-                                </div>
-                                <div class="carousel-item">
-                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Second slide"/>))[1]}
-                                </div>
-                                <div class="carousel-item">
-                                {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="Third slide"/>))[2]}
-                                </div>
+                                
+                                {screens.map((image, index) => (
+                                    <div class={index === 0 ? ("carousel-item active") : ("carousel-item")}>
+                                    <img 
+                                    key={index} 
+                                    src={image.url.replace('thumb', '1080p')} 
+                                    alt={getAltText(index)} />
+                                    </div>))}
+                                
                                 <div class="carousel-item">
                                 {video.map(urlvideo =>(<iframe
                                 class="d-block w-100"
