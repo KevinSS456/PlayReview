@@ -7,6 +7,7 @@ import Clarity from'../assets/clarity.png'
 import Coração from'../assets/coração.png'
 import Ranking from'../assets/ranking.png'
 import arrow from '../assets/arrow.png'
+import loading from '../assets/Loading.gif'
 
 import '../style/home.css'
 
@@ -64,9 +65,16 @@ const Home  = () => {
   const wallpaper_FF = getGame(metodo_FF,'',link_screenn)
   const wallpaper_Elden = getGame(metodo_Elden,'',link_screenn)
   const recents = getGame(metodo_recent)
+
+
   return (
-    
-    <div className='conteinerHome'>
+    <div>
+    {wallpaper_Senua.length === 0 && 
+      <div className="loading-container">
+        <img src={loading} alt="Loading" className="loading-gif" />
+      </div>
+    }
+    {wallpaper_Senua.length != 0 && <div className='conteinerHome'>
         <div id='home' class='w-100 d-inline-block'>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
@@ -80,16 +88,16 @@ const Home  = () => {
                         <h5>Senua's Saga: Hellblade II</h5>
                         <p>Share your review</p>
                     </div>
-                <Link to='/game/127342/31'>
+                <Link to='/game/127342/31/1'>
                    {wallpaper_Senua.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Primeiro Slide'} className="bgHome"/>))}
                 </Link>
                 </div>
                  <div class="carousel-item">
                  <div class="carousel-caption d-none d-md-block">
-                        <h5>Final Fantasy 15</h5>
+                        <h5>Final Fantasy 16</h5>
                         <p>Share your review</p>
                     </div>
-                 <Link to='/game/31551/12'>
+                 <Link to='/game/31551/12/1'>
                    {wallpaper_FF.map(scree =>(<img class="w-100  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Segundo Slide'} className="bgHome"/>))[0]}
                    </Link>
                  </div>
@@ -98,7 +106,7 @@ const Home  = () => {
                         <h5>Elden Ring: Shadow of the Erdtree</h5>
                         <p>Share your review</p>
                     </div>
-                 <Link to='/game/240009/12,31'>
+                 <Link to='/game/240009/12,31/1,2,3'>
                     {wallpaper_Elden.map(scree =>(<img  class="w-100  h-65  img-fluid" src={scree.url.replace('thumb', '1080p')} alt={'Terceiro Slide'} className="bgHome"/>))}
                     </Link>
                  </div>
@@ -167,8 +175,8 @@ const Home  = () => {
       
       
    
-      </div>
-
+      </div>}
+    </div>
   );
 };
 

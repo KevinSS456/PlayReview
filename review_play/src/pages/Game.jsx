@@ -7,10 +7,11 @@ import GameCard from "../components/GameCard"
 import "../style/game.css"
 import { FaStar} from 'react-icons/fa'
 import arrow from '../assets/arrow.png'
+import loading from '../assets/Loading.gif'
 
 
 const Game = () => {
-    const {id, gener } = useParams()
+    const {id, gener, modes } = useParams()
     const [i, setContador] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [isVisible_left, setIsVisible_left] = useState(false);
@@ -35,27 +36,49 @@ const Game = () => {
         }
         }
         
-
+        
         console.log(gener)
 
         const metodo = `*, cover.url; where id = ${id}`
         const metodo_screns = `*; where game = ${id};`
         const metodo_gener = `*; where id = (${gener});`
+        const metodo_mode = `*; where id = (${modes});`
+
     
 
         const link = 'https://api.igdb.com/v4/screenshots'
         const link_video = 'https://api.igdb.com/v4/game_videos'
         const link_gener = 'https://api.igdb.com/v4/genres/'
         const link_screenn = 'https://api.igdb.com/v4/artworks'
+        const link_mode = 'https://api.igdb.com/v4/game_modes'
+
         
         const games = getGame(metodo,id)
         const screens = getGame(metodo_screns,id,link)
         const video = getGame(metodo_screns,id,link_video)
         const gen = getGame(metodo_gener,id,link_gener)
         const wpp = getGame(metodo_screns,id,link_screenn)
+        const mode = getGame(metodo_mode,id,link_mode)
+
         
-    
-       
+        let person_value
+       let person = games.map(gamer =>
+        (gamer.player_perspectives)
+    )
+        person = person[0]
+    if(person){
+        if(person.includes(1) && person.includes(2)){
+            person_value = "1°and 3° person"
+        }
+        else if(person.includes(1)){
+            person_value = "1° person"
+        }
+        else{
+            person_value = "3° person"
+        }
+
+    console.log(mode)
+    }
 
 
         const data = games.map(gamer =>
@@ -80,7 +103,11 @@ const Game = () => {
     
     return(
     <div>
-    {games.length === 0 && <p>Carregando</p>}
+    {games.length === 0 && 
+    <div className="loading-container">
+      <img src={loading} alt="Loading" className="loading-gif" />
+    </div>
+    }
     {games.map(game => (
             <div>
             <div className="conteiner_game"> 
@@ -91,9 +118,10 @@ const Game = () => {
                 <h1 className="gameName">{game.name}</h1>
                 </div>
                 <div id="item-3">
-                    <p>Lançamento: {dia+'/'+mes+'/'+ano}</p>
-                    <p>Genero: {gen.map(genere => (genere.name+" "))}</p>
-                    <p>Perspectiva: Seila</p>
+                    <p>Launch: {dia+'/'+mes+'/'+ano}</p>
+                    <p>Gener: {gen.map(genere => (genere.name+"; "))}</p>
+                    <p>Modes: {mode.map(moder => (moder.name+"; "))}</p>
+                    <p>Perspectives: {person_value}</p>
                     <p>Dublado:Sim</p>
                 </div>
                 <div id="item-4">
@@ -127,10 +155,11 @@ const Game = () => {
                 
                 
             {wpp.map(scree =>(
-            <div className="mother-screen" style={{ backgroundImage: `url(${scree.url.replace('thumb', '1080p')})` }}>
+            <div className="mother-screen">
+                <img src={scree.url.replace('thumb', '1080p')} alt="screen" id="screen" />
                     <div className="screenshots">
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                            <div class="carousel-inner">
+                            <div class="carousel-inner" id="image">
                                 <div class="carousel-item active">
                                 {screens.map(foto =>(<img class="d-block w-100" src={foto.url.replace('thumb', '1080p')} alt="First slide"/>))[0]}
                                 </div>

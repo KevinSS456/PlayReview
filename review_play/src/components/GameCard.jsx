@@ -14,7 +14,7 @@ const GameCard = ({gameID, showLink = true}) => {
             {games.map(game => (
                 
                 <div className='game-card-items'>
-                    {showLink && <Link to={`../game/${gameID}/${game.genres}`}>
+                    {showLink && <Link to={`../game/${gameID}/${game.genres}/${game.game_modes}`}>
                     <h2>{game.name}  </h2>
                     <img src={game.cover.url.replace('thumb', '1080p')} alt={`Capa de ${game.name}`} />
                     </Link>}

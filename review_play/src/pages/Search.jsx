@@ -5,6 +5,8 @@ import { useState } from "react"
 import GameCard from "../components/GameCard"
 import { getGame } from "../functions/SearchGame"
 import '../style/search.css'
+import loading from '../assets/Loading.gif'
+
 const Search = () => {
     const [searchParans] = useSearchParams()
     const query = searchParans.get("q")
@@ -26,19 +28,28 @@ const Search = () => {
 
 
     return(
+        <div>
+        {games.length == 0 && 
+            <div className="loading-container">
+              <img src={loading} alt="Loading" className="loading-gif" />
+            </div>
+        }
+        
         <div id='container_dad'>
             <form onSubmit={handleSubmit} id="input">
-                {<input id="input_search" type="text" placeholder={query} onChange={(e) => setSearch(e.target.value)} value = {search}/>}
+             <input id="input_search" type="text" placeholder={query} onChange={(e) => setSearch(e.target.value)} value = {search}/>
                 <button type="submit" id="button_input">
                 <BiSearchAlt2 id='icon'/>
                 </button>
             </form>
+            {games.length != 0 && 
             <div className="container">
-            {games.length === 0 && <p>Carregando..</p>}
+            
             {games.map(game => (
                 <GameCard key={game.id} gameID={game.id} />
             ))}
-            </div>
+            </div>}
+        </div>
         </div>
     )
 }

@@ -150,9 +150,37 @@ h1{
     overflow: hidden;
     background-size: cover; /* Cobrir totalmente a área da div com a imagem */
     background-position: center;
-    filter: grayscale(1);
     
 }
 .carousel .carousel-item {
     transition: transform 1s ease, opacity 3s;
+  }
+#screen{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Camada -1 para a imagem */
+        filter: grayscale(1);
+        object-fit: cover;
+  }
+#image img{
+    height: 560px;
+    width: 100%;
+}
+.loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+     /* Certifique-se de que o z-index é maior que os outros elementos na página */
+  }
+  
+  .loading-gif {
+    width: 8rem; /* ajuste conforme necessário */
+    height: 8rem; /* ajuste conforme necessário */
   }
