@@ -125,7 +125,6 @@ const Game = () => {
                     <p>Gener: {gen.map(genere => (genere.name+"; "))}</p>
                     <p>Modes: {mode.map(moder => (moder.name+"; "))}</p>
                     <p>Perspectives: {person_value}</p>
-                    <p>Dublado:Sim</p>
                 </div>
                 <div id="item-4">
                     <h2 className="" id="make_reviw_text">REVIEWS:</h2>

@@ -25,6 +25,7 @@
     margin: 6rem 0;
     border-bottom:  4px solid #ffe44b;
     margin-right: 1.2rem;
+    outline: none;
 }
 #input_search{
     width: 100%;
@@ -36,6 +37,7 @@
     color: #ffe44b;
     font-size: 2vw;
     font-family: 'Roboto Mono';
+    outline: none;
 }
 #button_input{
     height: 100%;
