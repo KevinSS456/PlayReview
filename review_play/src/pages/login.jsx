@@ -32,15 +32,16 @@ const Login= () => {
             <p>Sing in Facebook</p>
         </button>
         <button className="conectionbutton">
-            <FaApple  className="iconConnection"/>
+            <FaApple  className="iconConnection" id="appleicon"/>
             <p>Sing in Aple</p>
         </button>
     </div>
     
     <div className="changes">
         <h2 className="textfrom">Forgot the password ? 
-             <Link><span id="spanlogin"> Click here</span></Link></h2>
-             <Link to='../Cadastro'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Sing Up</span></button></Link>
+             <Link><span className="spanlogin"> Click here</span></Link></h2>
+             <h2 className="textfrom">Or
+             <Link to='../Cadastro'><span className="spanlogin"> Sing Up</span></Link></h2>
     </div>
         
     </div>

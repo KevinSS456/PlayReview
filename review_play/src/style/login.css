@@ -89,13 +89,18 @@
     font-weight: 400;
     color: white;
     background: rgba(161, 227, 217, 0.26);
+    border: 0.2rem #A1E3D9 solid;
     border-radius: 1rem;
     gap: 2rem;
 }
 .iconConnection{
-   margin-left: 1rem;
-    font-size: 2.7rem;
+    margin-left: 1rem;
+    font-size: 3rem;
 }
+#appleicon{
+    font-size: 3.5rem;
+}
+
 .changes{
     margin-top: 2rem;
     grid-row-start: 3;
@@ -111,6 +116,6 @@
 }
 
 
-#spanlogin{
+.spanlogin{
     color: #FFE44B;
 }

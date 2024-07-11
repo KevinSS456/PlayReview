@@ -39,7 +39,7 @@ const Cadastro= () => {
     <div className="changes">
     <Link to='../Escolha'><button id="cadastrobutton" className="botaoLogin"><span id="buttonCadastroText">Sing Up</span></button></Link>
     <h2 className="textfrom" >Are you registered already ?
-             <Link to='../Login'><span id="spanlogin"> Click here</span></Link></h2>
+             <Link to='../Login'><span className="spanlogin"> Click here</span></Link></h2>
              
     </div>
         
