@@ -19,7 +19,7 @@ const Login= () => {
         <input type="text" className="input"/>
         <label htmlFor="senha" className="textfrom" id="senha">Password:</label>
         <input type="text" className="input"/>
-        <button  className="botaoLogin"><p>Sing In</p></button>    
+        <Link id="Senhaforgot"><h2 className="textfrom">Forgot the password?</h2></Link>
     </form>
    
     <div className="buttonsLogin">
@@ -38,8 +38,9 @@ const Login= () => {
     </div>
     
     <div className="changes">
-        <h2 className="textfrom">Forgot the password ? 
-             <Link><span className="spanlogin"> Click here</span></Link></h2>
+    <button class="botaoLogin">
+        <p>Sing in</p>
+        </button>  
              <h2 className="textfrom">Or
              <Link to='../Cadastro'><span className="spanlogin"> Sing Up</span></Link></h2>
     </div>

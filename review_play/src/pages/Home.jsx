@@ -141,11 +141,9 @@ const Home  = () => {
                 <p className='liHomeText'>Spread the love for your favorite game with your friends.</p>
               </li>
             </ul>
-          <Link to='../Cadastro'>
-          <div className="botao" id='botaoComeça'>
-            <h3 id='textbotao'>START NOW  !</h3>
-          </div>
-          </Link>
+            <button class="botaoLogin">
+                <p id='textbotao'>Start Now!</p>
+            </button>  
       </div>
 
       <div id="home3">
